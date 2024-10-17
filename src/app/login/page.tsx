@@ -94,11 +94,11 @@ export default function LoginPage() {
           className="w-full bg-cyan-400 text-white px-4 py-2 rounded-lg shadow-md hover:shadow-cyan-500/100 transition duration-200"
           disabled={buttonDisabled}
         >
-          {buttonDisabled ? "Fill in all fields" : "Log In"}
+          {buttonDisabled? "Fill in all fields": "Log In"}
         </button>
 
         <p className="text-center text-sm text-gray-600 mt-4">
-          {/* Don't have an account ?{" "} */}
+          { Don't have an account? {" "} }
           <Link href="/SignUp" className="text-indigo-600 hover:text-indigo-800">Sign Up</Link>
         </p>
       </div>
