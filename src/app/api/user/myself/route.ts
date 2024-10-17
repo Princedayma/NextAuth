@@ -5,22 +5,22 @@ import { connect } from "@/dbConfig/dbConfig";
 
 connect();
 
-export async function GET(request: NextRequest) {
+export async function GET(request:NextRequest) {
     try {
-        // Extract the Authorization header from the request
-        const authHeader = request.headers.get('authorization');
-        if (!authHeader) {
-            return new Response(JSON.stringify({ error: "Authorization header must be provided" }), { status: 400 });
-        }
+        // // Extract the Authorization header from the request
+        // const authHeader = request.headers.get('authorization');
+        // if (!authHeader) {
+        //     return new Response(JSON.stringify({ error: "Authorization header must be provided" }), { status: 400 });
+        // }
 
-        // Extract the token from the Authorization header
-        const token = authHeader.split(' ')[1];
-        if (!token) {
-            return NextResponse.json({ error: "JWT must be provided" }, { status: 400 });
-        }
+        // // Extract the token from the Authorization header
+        // const token = authHeader.split(' ')[1];
+        // if (!token) {
+        //     return NextResponse.json({ error: "JWT must be provided" }, { status: 400 });
+        // }
 
-        // Get user ID from the token
-        const userId = getDataFromToken(request);
+        // Get user ID from the token (passing token instead of request)
+        const userId = await getDataFromToken(request);
 
         // Find the user by ID and exclude the password field
         const user = await User.findOne({ _id: userId }).select("-password");

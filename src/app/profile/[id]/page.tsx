@@ -80,12 +80,7 @@ export default function UserProfile({ params }: { params: Params }) {
           <p className="text-gray-500">{user.id}</p>
         </div>
      
-        <button
-          className="w-full my-4 bg-cyan-400 text-white px-4 py-2 rounded-lg shadow-md hover:shadow-cyan-500/100 transition duration-200"
-          onClick={getUserDetails}
-        >
-          UserDetails
-        </button>
+       
         <button
           className="w-full bg-cyan-400 text-white px-4 py-2 rounded-lg shadow-md hover:shadow-cyan-500/100 transition duration-200"
           onClick={logout}

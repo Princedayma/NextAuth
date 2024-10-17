@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import Link from "next/link";
-import toast from "react-hot-toast";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -27,7 +26,7 @@ export default function LoginPage() {
       setLoginSuccess(true); // Set signup success state
       // Optionally redirect after showing success message
       setTimeout(() => {
-        router.push("/profile/[id]");
+        router.push("/profile");
       }, 3000);
     } catch (error: any) {
       console.log("Error logging in:", error.message);
@@ -49,8 +48,8 @@ export default function LoginPage() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-cyan-500">
-      <div className="w-full max-w-md p-8 bg-yellow-200 rounded-lg shadow-md ">
-        <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-800 mb-4 text-center">{loading ? "Processing" : "Log In"}</h1>
+      <div className="w-full max-w-md p-8 bg-yellow-200 rounded-lg shadow-md">
+        <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-800 mb-4 text-center">{loading ? "Processing" : "LogIn"}</h1>
         <div className="h-1 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
 
         {error && (
@@ -99,7 +98,7 @@ export default function LoginPage() {
         </button>
 
         <p className="text-center text-sm text-gray-600 mt-4">
-          Don't have an account?{" "}
+          {/* Don't have an account ?{" "} */}
           <Link href="/SignUp" className="text-indigo-600 hover:text-indigo-800">Sign Up</Link>
         </p>
       </div>
