@@ -4,7 +4,7 @@ export function middleware(request: NextRequest) {
   // const path = request.nextUrl.pathname;
 
   // const isPublic = path === '/login' || path === '/signup';
-  // const token = request.cookies.get('token')?.value || '';
+  // const token = request.cookies.get('token')?.value || '':
 
   // // Allow access to the public pages
   // if (isPublic) {
